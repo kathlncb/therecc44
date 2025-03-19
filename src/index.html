@@ -1,0 +1,233 @@
+---
+title: 'The Rec 44 | Sports & Recreation Venue | Markham, ON'
+description: 'The Rec 44 in Markham, ON offers full-size FIBA and half-court rentals with flexible plans for drop-ins or long-term commitments.'
+preloadImg: '/assets/images/Rec-44-Logo.png'
+permalink: '/'
+tags: 'sitemap' # Sitemap will use all pages in content/, due to content.json. As index.html is not included in content/ we need to manually add the sitemap tag to this page (only).
+eleventyNavigation:
+  key: Home
+  order: 100
+---
+
+{% extends "layouts/base.html" %}
+
+{% block head %}
+    <link rel="stylesheet" href="/assets/css/local.css"/>
+    <link rel="stylesheet" href="/assets/css/critical.css"/>
+
+    <!-- Script for Netlify Identity -->
+    <script defer src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    <script defer>
+        if (window.netlifyIdentity) {
+            window
+                .netlifyIdentity
+                .on('init', (user) => {
+                    if (!user) {
+                        window
+                            .netlifyIdentity
+                            .on('login', () => {
+                                document.location.href = '/admin/';
+                            });
+                    }
+                });
+        }
+    </script>
+
+    <!-- JSON Schema Markup -->
+    <script type="application/ld+json">
+        {
+            "@context": "http://schema.org",
+            "@type": "LocalBusiness",
+            "name": "{{ client.name }}",
+            {% if preloadImg %}"image": "{{ preloadImg }}",{% endif %}
+            {% if client.phoneFormatted %}"telephone": "{{ client.phoneFormatted }}",{% endif %}
+            {% if client.email %}"email": "{{ client.email }}",{% endif %}
+            {% if client.address %}
+                "address": {
+                    "@type": "PostalAddress"{% if client.address.lineOne %},
+                        "streetAddress": "{{ client.address.lineOne }}{% if client.address.lineTwo %}, {{ client.address.lineTwo }}{% endif %}"
+                    {% endif %}
+                    {% if client.address.city %},
+                        "addressLocality": "{{ client.address.city }}"
+                    {% endif %}
+                    {% if client.address.state %},
+                        "addressRegion": "{{ client.address.state }}"
+                    {% endif %}
+                    {% if client.address.zip %},
+                        "postalCode": "{{ client.address.zip }}"
+                    {% endif %}
+                    {% if client.address.country %},
+                        "addressCountry": "{{ client.address.country }}"
+                    {% endif %}
+                },
+            {% endif %}
+            {% if client.domain and page.url %}"url": "{{ client.domain }}{{ page.url }}",{% endif %}
+            {% if client.socials %}
+                "sameAs": [{% for platform, url in client.socials %}
+                        {% if not loop.first %},{% endif %}
+                        "{{ url }}"
+                    {% endfor %}]
+            {% endif %}
+        }
+    </script>
+{% endblock %}
+
+{% block body %}
+
+<!-- ============================================ -->
+<!--                    Hero                      -->
+<!-- ============================================ -->
+
+<section id="hero-1351">
+    <div class="cs-container">
+        <div class="cs-content">
+            <h1 class="cs-title">WHERE PASSION </br>MEETS PERFORMANCE</h1>
+            <a href="" class="cs-button-solid">Book A Court</a>
+        </div>
+    </div>
+    <!-- Background Image, background image added in the css at 1600px for parallax effect -->
+    <picture class="cs-background">
+        <source media="(max-width: 600px)" srcset="https://websthetic.tor1.cdn.digitaloceanspaces.com/rec44/hero.png">
+        <source media="(min-width: 601px)" srcset="https://websthetic.tor1.cdn.digitaloceanspaces.com/rec44/hero.png">
+        <img decoding="async" src="https://websthetic.tor1.cdn.digitaloceanspaces.com/rec44/hero.png" alt="abstract background" width="2216" height="3936" aria-hidden="true">
+    </picture>
+</section>                           
+
+<!-- ============================================ -->
+<!--                     About                    -->
+<!-- ============================================ -->
+
+<section id="hero-1969">
+    <div class="cs-container">
+        <div class="cs-content">
+            <h2 class="cs-title">HIGH END GYM SPECIALIZING IN DIVERSE SPORTS AND PERFORFMANCE TRAINING</h2>
+            <div class="cs-flex">
+                <p class="cs-text">
+                    Rec 44 offers an affordable multi-sports court for all communities, creating a space where people of all ages can play, stay active,and connect through sports and recreation.
+                </p>
+            </div>
+        </div>
+    </div>
+        <!--Background Image-->
+        <picture class="cs-background">
+            <source media="(max-width: 600px)"
+                    srcset="https://websthetic.tor1.cdn.digitaloceanspaces.com/rec44/Rec%2044%20Logo%20prim-02.png">
+            <source media="(min-width: 601px)"
+                    srcset="https://websthetic.tor1.cdn.digitaloceanspaces.com/rec44/Rec%2044%20Logo%20prim-02.png">
+            <img aria-hidden="true" loading="lazy" decoding="async"
+                    src="https://websthetic.tor1.cdn.digitaloceanspaces.com/rec44/Rec%2044%20Logo%20prim-02.png"
+                    alt="rec44 logo" width="360" height="316">
+        </picture>
+    </section>
+</section>
+                                
+
+<!-- ============================================ -->
+<!--              Multi Sport Court               -->
+<!-- ============================================ -->
+
+<section id="multisport">
+    <div class="cs-container">
+        <div class="cs-content">
+            <h1 class="cs-title">MULTI SPORT COURT</h1>
+            <h3 class="cs-h3">
+                $125 + TAX PER HOUR
+            </h3>
+        </div>
+        <div class="cs-wrapper">
+            <div class="cs-flex">
+                <a href="" class="cs-button-solid">Book A Court</a>
+            </div>           
+        </div>
+    </div>
+    <picture class="cs-background">
+        <source media="(max-width: 600px)" srcset="https://websthetic.tor1.cdn.digitaloceanspaces.com/rec44/multi%20sport%20court.png">
+        <source media="(min-width: 601px)" srcset="https://websthetic.tor1.cdn.digitaloceanspaces.com/rec44/multi%20sport%20court.png">
+        <img decoding="async" src="https://websthetic.tor1.cdn.digitaloceanspaces.com/rec44/multi%20sport%20court.png" alt="multi sport court" width="2216" height="3936" aria-hidden="true">
+    </picture>
+</section>          
+
+<!-- ============================================ -->
+<!--                   Logos                      -->
+<!-- ============================================ -->
+
+<section id="logos-1430">
+    <div class="cs-container">
+        <!--Ideally you want to use svg's for the file path image, which is why these aren't wrapped in picture elements for different screen sizes-->
+        <picture class="cs-picture">
+            <img class="cs-logo" src="https://websthetic.tor1.cdn.digitaloceanspaces.com/rec44/Rec%2044%20Logo%20word%20mark-01.png" alt="logo" width="1000" height="1000" loading="lazy" decoding="async">
+        </picture>
+        <picture class="cs-picture">
+            <img class="cs-logo" src="https://websthetic.tor1.cdn.digitaloceanspaces.com/rec44/Rec%2044%20Logo%20word%20mark-01.png" alt="1000" width="1000" height="1000" loading="lazy" decoding="async">
+        </picture>
+        <picture class="cs-picture">
+            <img class="cs-logo" src="https://websthetic.tor1.cdn.digitaloceanspaces.com/rec44/Rec%2044%20Logo%20word%20mark-01.png" alt="1000" width="500" height="1000" loading="lazy" decoding="async">
+        </picture>
+        <picture class="cs-picture">
+            <img class="cs-logo" src="https://websthetic.tor1.cdn.digitaloceanspaces.com/rec44/Rec%2044%20Logo%20word%20mark-01.png" alt="logo" width="1000" height="1000" loading="lazy" decoding="async">
+        </picture>
+        <picture class="cs-picture">
+            <img class="cs-logo" src="https://websthetic.tor1.cdn.digitaloceanspaces.com/rec44/Rec%2044%20Logo%20word%20mark-01.png" alt="logo" width="1000" height="1000" loading="lazy" decoding="async">
+        </picture>
+        <picture class="cs-picture">
+            <img class="cs-logo" src="https://websthetic.tor1.cdn.digitaloceanspaces.com/rec44/Rec%2044%20Logo%20word%20mark-01.png" alt="logo" width="1000" height="1000" loading="lazy" decoding="async">
+        </picture>
+        <picture class="cs-picture">
+            <img class="cs-logo" src="https://websthetic.tor1.cdn.digitaloceanspaces.com/rec44/Rec%2044%20Logo%20word%20mark-01.png" alt="logo" width="1000" height="1000" loading="lazy" decoding="async">
+        </picture>
+    </div>
+</section>
+ 
+<!-- ============================================ -->
+<!--                 Half Court                   -->
+<!-- ============================================ -->
+
+<section id="halfcourt">
+    <div class="cs-container">
+        <div class="cs-content">
+            <h1 class="cs-title">HALF COURT</h1>
+            <h3 class="cs-h3">
+                $65 + TAX PER HOUR
+            </h3>
+        </div>
+        <div class="cs-wrapper">
+            <div class="cs-flex">
+                <a href="" class="cs-button-solid">Book A Court</a>
+            </div>           
+        </div>
+    </div>
+    <picture class="cs-background">
+        <source media="(max-width: 600px)" srcset="https://websthetic.tor1.cdn.digitaloceanspaces.com/rec44/multi%20sport%20court%20(1).png">
+        <source media="(min-width: 601px)" srcset="https://websthetic.tor1.cdn.digitaloceanspaces.com/rec44/multi%20sport%20court%20(1).png">
+        <img decoding="async" src="https://websthetic.tor1.cdn.digitaloceanspaces.com/rec44/multi%20sport%20court%20(1).png" alt="half court" width="2216" height="3936" aria-hidden="true">
+    </picture>
+</section>          
+
+<!-- ============================================ -->
+<!--                    Quote                     -->
+<!-- ============================================ -->
+
+<section id="quote-1307">
+    <div class="cs-container">
+        <div class="cs-content">
+            <p class="cs-quote">
+                “YOU REALLY FEEL THE ENERGY WHEN YOU STEP INTO THIS BUILDING WITH THE WELCOMING STAFF. EXCITED TO SEE THE CONTINUED GROWTH AND FULLY SUPPORT WHAT THEY ARE BUILDING FOR THE COMMUNITY”
+            </p>
+            <span class="cs-name">-WINSTON HUANG</span>
+        </div>
+    </div>
+        <!--Background Image-->
+        <picture class="cs-background">
+            <source media="(max-width: 600px)"
+                    srcset="https://websthetic.tor1.cdn.digitaloceanspaces.com/rec44/Rec%2044%20Logo%20prim-02.png">
+            <source media="(min-width: 601px)"
+                    srcset="https://websthetic.tor1.cdn.digitaloceanspaces.com/rec44/Rec%2044%20Logo%20prim-02.png">
+            <img aria-hidden="true" loading="lazy" decoding="async"
+                    src="https://websthetic.tor1.cdn.digitaloceanspaces.com/rec44/Rec%2044%20Logo%20prim-02.png"
+                    alt="rec44 logo" width="360" height="316">
+        </picture>
+</section>
+                                
+
+    {% include 'components/cta.html' %}
+{% endblock %}

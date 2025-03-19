@@ -1,0 +1,560 @@
+/* PAGE-SPECIFIC STYLES FOR THE HOME PAGE */
+                                     
+/*-- -------------------------- -->
+<---           About            -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    #hero-1969 {
+        padding: var(--sectionPadding);
+        overflow: hidden;
+        position: relative;
+        z-index: 1;
+
+        .cs-container {
+            width: 100%;
+            max-width: (1280/16rem);
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: clamp(0.5rem, 1vw, 0.5rem);
+            position: relative;
+            z-index: 1;
+        }
+
+        .cs-content {
+            text-align: left;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            position: relative;
+            z-index: 1;
+            flex: 1; // Equalize columns
+        }
+
+        .cs-title {
+            font-family: 'DIN Condensed VF';
+            font-size: clamp(2rem, 4.876vw, 3rem);
+            max-width: 32ch;
+            color: var(--primary);
+        }
+
+        .cs-flex {
+            /* changes to 455px at large desktop */
+            max-width: (960/16rem);
+            flex: 1; // Equalize columns
+        }
+
+        .cs-text {
+            max-width: 100%;
+            color: var(--primary);
+        }
+
+        .cs-background {
+            width: 100%;
+            height: 100%;
+            background-color: #ffffff;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+
+            /* darkened overlay */
+            &::before {
+                content: "";
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                z-index: 1;
+
+            }
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                opacity: 0.2;
+                position: absolute;
+                top: 0;
+                left: 0;
+                background-image: url('https://websthetic.tor1.cdn.digitaloceanspaces.com/rec44/Rec%2044%20Logo%20prim-02.png'); /* Your image URL */
+            background-repeat: repeat; /* This ensures the background repeats */
+            background-size: 220px 220px;
+            }
+        }
+    }
+}
+
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+    #hero-1969 {
+        .cs-wrapper {
+            padding: (80/16rem) (28/16rem);
+            align-items: flex-end;
+        }
+
+        .cs-form-wrapper {
+            max-width: (374/16rem);
+        }
+    }
+}
+
+/* Large Desktop - 1300px */
+@media only screen and (min-width: 81.25rem) {
+    #hero-1969 {
+        .cs-title {
+            margin: 0;
+        }
+
+        .cs-container {
+            max-width: (1600/16rem);
+        }
+
+        .cs-content {
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            gap: (30/16rem);
+        }
+
+        .cs-flex {
+            width: 50%;
+            max-width: (750/16rem);
+        }
+
+        .cs-wrapper {
+            padding: (80/16rem);
+        }
+    }
+}
+                                
+
+/*-- -------------------------- -->
+<---    Multi Sport Court       -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    #multisport {
+        padding: clamp(18.75rem, 54vw, 25rem) (16/16rem) clamp(3.75rem, 7.5vw, 6.25rem) (16/16rem);
+        overflow: hidden;
+        position: relative;
+        z-index: 1;
+        
+        .cs-container {
+            width: 100%;
+            /* changes to 1280px at tablet */
+            max-width: (1280/16rem);
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            /* 48px - 64px */
+            gap: clamp(3rem, 6vw, 4rem);
+        }
+
+        .cs-content {
+            /* set text align to left if content needs to be left aligned */
+            text-align: left;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            /* centers content horizontally, set to flex-start to left align */
+            align-items: flex-start;
+            justify-content: end;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cs-title {
+            max-width: 15ch;
+        }
+
+        .cs-flex {
+            text-align: end;
+        }
+
+        .cs-background {
+            width: 100%;
+            height: 100%;
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -2;
+
+            &:before {
+                /* Overlay */
+                content: "";
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(0deg, rgba(0, 0, 0, 0.10) 0%, rgba(0, 0, 0, 0.10) 100%);
+                /* prevents the cursor from interacting with it */
+                pointer-events: none;
+                opacity: 1;
+                display: block;
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: 1;
+            }
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+        }
+    }
+}
+
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+    #multisport {
+        .cs-container {
+            max-width: (1280/16rem);
+            flex-direction: row;
+            justify-content: flex-end;
+            align-items: stretch;
+            gap: 0;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cs-content {
+            width: 45vw;
+            height: auto;
+        }
+
+        .cs-wrapper {
+            width: 60%;
+            max-width: (546/16rem);
+            height: auto;
+            position: relative;
+            z-index: 10;
+        }
+
+        .cs-flex {
+            /* 48px - 70px */
+            padding-left: clamp(3rem, 6vw, 4.375rem);
+        }
+    }
+}
+
+/* Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+    #multisport {
+        .cs-wrapper {
+            /* 168px - 240px */
+            padding-top: clamp(10.5rem, 18vw, 14rem);
+        }
+
+        .cs-content {
+            width: clamp(47vw, 48vw, 55vw);
+        }
+    }
+}
+
+/* Large Desktop - 1300px */
+@media only screen and (min-width: 81.25rem) {
+    #multisport {
+        .cs-leaf {
+            z-index: 10;
+            left: (-206/16rem);
+        }
+    }
+}
+          
+
+/*-- -------------------------- -->
+<---           Logos            -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    #logos-1430 {
+        background-color: var(--primary);
+        position: relative;
+        z-index: 1;
+        
+        .cs-container {
+            width: 100%;
+            max-width: (1280/16rem);
+            margin: auto;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            column-gap: (50/16rem);
+        }
+
+        .cs-picture {
+            /* 120px - 150px */
+            width: clamp(9.5rem, 12vw, 5.375rem);
+            height: clamp(3.5rem, 12vw, 5.375rem);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .cs-logo {
+            width: 100%;
+            height: auto;
+            height: auto;
+            margin: 0;
+            display: block;
+            object-fit: contain;
+        }
+    }
+}
+
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+    #logos-1430 {
+        .cs-container {
+            justify-content: space-between;
+            flex-wrap: nowrap;
+        }
+    }
+}
+
+/*-- -------------------------- -->
+<---         Half Court         -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    #halfcourt {
+        padding: clamp(18.75rem, 54vw, 25rem) (16/16rem) clamp(3.75rem, 7.5vw, 6.25rem) (16/16rem);
+        overflow: hidden;
+        position: relative;
+        z-index: 1;
+        
+        .cs-container {
+            width: 100%;
+            /* changes to 1280px at tablet */
+            max-width: (1280/16rem);
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            /* 48px - 64px */
+            gap: clamp(3rem, 6vw, 4rem);
+        }
+
+        .cs-content {
+            /* set text align to left if content needs to be left aligned */
+            text-align: left;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            /* centers content horizontally, set to flex-start to left align */
+            align-items: flex-start;
+            justify-content: end;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cs-title {
+            max-width: 15ch;
+        }
+
+        .cs-flex {
+            text-align: end;
+        }
+
+        .cs-background {
+            width: 100%;
+            height: 100%;
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -2;
+
+            &:before {
+                /* Overlay */
+                content: "";
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(0deg, rgba(0, 0, 0, 0.10) 0%, rgba(0, 0, 0, 0.10) 100%);
+                /* prevents the cursor from interacting with it */
+                pointer-events: none;
+                opacity: 1;
+                display: block;
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: 1;
+            }
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+        }
+    }
+}
+
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+    #halfcourt {
+        .cs-container {
+            max-width: (1280/16rem);
+            flex-direction: row;
+            justify-content: flex-end;
+            align-items: stretch;
+            gap: 0;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cs-content {
+            width: 45vw;
+            height: auto;
+        }
+
+        .cs-wrapper {
+            width: 60%;
+            max-width: (546/16rem);
+            height: auto;
+            position: relative;
+            z-index: 10;
+        }
+
+        .cs-flex {
+            /* 48px - 70px */
+            padding-left: clamp(3rem, 6vw, 4.375rem);
+        }
+    }
+}
+
+/* Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+    #halfcourt {
+        .cs-wrapper {
+            /* 168px - 240px */
+            padding-top: clamp(10.5rem, 18vw, 14rem);
+        }
+
+        .cs-content {
+            width: clamp(47vw, 48vw, 55vw);
+        }
+    }
+}
+
+/* Large Desktop - 1300px */
+@media only screen and (min-width: 81.25rem) {
+    #halfcourt {
+        .cs-leaf {
+            z-index: 10;
+            left: (-206/16rem);
+        }
+    }
+}
+ 
+/*-- -------------------------- -->
+<---          Quote             -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    #quote-1307 {
+        position: relative;
+        z-index: 1;
+
+        .cs-container {
+            width: 100%;
+            max-width: (1280/16rem);
+            margin: auto;
+            box-sizing: border-box;
+            padding: var(--sectionPadding);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .cs-content {
+            width: 100%;
+            max-width: (1280/16rem);
+            display: flex;
+            flex-direction: column;
+            /* centers content horizontally, set to flex-start to left align */
+            align-items: center;
+            /* set text align to left if content needs to be left aligned */
+            text-align: center;
+        }
+
+        .cs-quote {
+            /* 31px - 49px */
+            font-size: clamp(1.5rem, 5.1vw, 3.125rem);
+            line-height: 1.3em;
+            font-weight: 900;
+            font-family: 'Eurostile Extd';
+            margin: 0;
+            margin-bottom: (24/16rem);
+            color: var(--secondary);
+            text-align: inherit;
+        }
+
+        .cs-name {
+            /* 20px - 25px */
+            font-size: clamp(1.5rem, 5.1vw, 3.125rem);
+            line-height: 1.2em;
+            font-weight: 300;
+            margin: 0;
+            font-family: 'DIN Condensed VF';
+            margin-bottom: (8/16rem);
+            color: var(--primary);
+            display: block;
+            text-align: inherit;
+        }
+
+        .cs-background {
+            width: 100%;
+            height: 100%;
+            background-color: #ffffff;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+
+            /* darkened overlay */
+            &::before {
+                content: "";
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                z-index: 1;
+
+            }
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                opacity: 0.2;
+                position: absolute;
+                top: 0;
+                left: 0;
+                background-image: url('https://websthetic.tor1.cdn.digitaloceanspaces.com/rec44/Rec%2044%20Logo%20prim-02.png'); /* Your image URL */
+            background-repeat: repeat; /* This ensures the background repeats */
+            background-size: 220px 220px;
+            }
+        }
+    }
+}
+
+                                
