@@ -105,6 +105,49 @@
     display: none;
   }
 }
+.cs-button-solid-2 {
+  z-index: 1;
+  position: relative;
+  display: inline-block;
+  background-color: var(--headerColor);
+  width: auto;
+  padding: 0 3.75rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-family: 'DIN Condensed VF';
+  font-size: clamp(1.2rem, 1.5vw, 1.5rem);
+  line-height: 3.125em;
+  font-weight: 400;
+  color: var(--primary);
+  transition: color 0.3s;
+  border-radius: 48px;
+  transition-delay: 0.1s;
+  text-align: center;
+}
+.cs-button-solid-2:hover {
+  color: var(--headerColor);
+  border-radius: 48px;
+}
+.cs-button-solid-2:hover:before {
+  width: 100%;
+}
+.cs-button-solid-2:before {
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "";
+  opacity: 1;
+  display: block;
+  background-color: var(--primary);
+  border-radius: 48px;
+  height: 100%;
+  width: 0;
+  transition: width 0.3s;
+}
+.cs-hide-on-mobile {
+  display: none;
+}
 /* Desktop - 1024px */
 @media only screen and (min-width: 64rem) {
   .cs-hide-on-mobile {

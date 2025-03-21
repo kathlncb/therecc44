@@ -1,80 +1,52 @@
-/* PAGE-SPECIFIC STYLES FOR THE HOME PAGE */
+/* STYLES FOR ABOVE THE FOLD */
 /*-- -------------------------- -->
 <---           Hero             -->
 <--- -------------------------- -*/
 /* Mobile - 360px */
 @media only screen and (min-width: 0rem) {
-  #about {
-    /* 200px - 300px top */
-    /* 60px - 100px bottom */
-    padding: clamp(12.5rem, 12vw, 18.75rem) 1rem clamp(3.75rem, 8vw, 6.25rem) 1rem;
-    display: flex;
-    align-items: flex-end;
+  #hero-1351 {
+    /* 250px - 500px - leaving extra space for the navigation */
+    padding: clamp(15.625rem, 35.95vw, 28rem) 1rem 0;
+    /* 200px - 250px */
+    padding-bottom: clamp(12.5rem, 16.5vw, 5.625rem);
+    height: 100vh;
+    overflow: hidden;
     position: relative;
     z-index: 1;
   }
-  #about .cs-container {
+  #hero-1351 .cs-container {
     width: 100%;
     max-width: 80rem;
-    margin: 0 auto;
+    margin: auto;
     display: flex;
+    justify-content: center;
     flex-direction: column;
-    justify-content: flex-end;
-    align-items: flex-end;
-    /* 60px - 180px */
-    gap: clamp(3.75rem, 13vw, 11.25rem);
+    align-items: start;
   }
-  #about .cs-content {
+  #hero-1351 .cs-content {
     /* set text align to left if content needs to be left aligned */
     text-align: left;
     width: 100%;
+    max-width: 80rem;
     display: flex;
     flex-direction: column;
     /* centers content horizontally, set to flex-start to left align */
     align-items: flex-start;
+    justify-content: end;
   }
-  #about .cs-title {
-    margin-bottom: 1.75rem;
-  }
-  #about .cs-text {
-    margin-bottom: 1.25rem;
-    color: var(--primary);
-  }
-  #about .cs-flex-group {
-    max-width: 30rem;
-  }
-  #about .cs-button-solid {
-    font-size: 1rem;
-    font-weight: 700;
-    /* 46px - 56px */
-    line-height: clamp(2.875rem, 5.5vw, 3.5rem);
-    text-decoration: none;
-    margin: 0;
-    /* 32px - 48px */
-    padding: 0 clamp(2rem, 4vw, 3rem);
-    background-color: var(--primary);
+  #hero-1351 .cs-title {
+    line-height: 1.1em;
+    text-align: inherit;
+    max-width: 30ch;
+    margin: 0 0 1rem 0;
     color: #fff;
-    display: inline-block;
     position: relative;
-    z-index: 1;
   }
-  #about .cs-button-solid:before {
-    content: '';
-    width: 0%;
-    height: 100%;
-    background: #000;
-    opacity: 1;
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
-    transition: width 0.3s;
+  #hero-1351 .cs-button-solid {
+    justify-content: center;
+    align-items: center;
   }
-  #about .cs-button-solid:hover:before {
-    width: 100%;
-  }
-  #about .cs-background {
+  #hero-1351 .cs-background {
     width: 100%;
     height: 100%;
     display: block;
@@ -83,21 +55,22 @@
     left: 0;
     z-index: -2;
   }
-  #about .cs-background:before {
+  #hero-1351 .cs-background:before {
     /* Overlay */
-    content: '';
+    content: "";
     width: 100%;
     height: 100%;
-    background: linear-gradient(180deg, rgba(26, 26, 26, 0.86) 10.79%, rgba(26, 26, 26, 0) 48.32%, rgba(26, 26, 26, 0.86) 82.84%);
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.6) 100%);
     /* prevents the cursor from interacting with it */
     pointer-events: none;
+    opacity: 1;
     display: block;
     position: absolute;
     top: 0;
     left: 0;
     z-index: 1;
   }
-  #about .cs-background img {
+  #hero-1351 .cs-background img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -105,150 +78,44 @@
     top: 0;
     left: 0;
   }
+  /* Tablet - 768px */
+  /* Large Desktop - 1300px */
+  /* Large Desktop Parallax Effect - 1600px */
+  /* Larger Desktop - 1800px */
 }
-/* Tablet - 768px */
-@media only screen and (min-width: 48rem) {
-  #about .cs-content {
-    text-align: left;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: flex-start;
-    gap: 2rem;
-  }
-  #about .cs-title {
-    width: 55%;
-    max-width: 39.375rem;
-    margin-bottom: 0;
-    /* prevents flexbox from squishing it */
-    flex: none;
-  }
-  #about .cs-flex-group {
-    max-width: 30rem;
+@media only screen and (min-width: 0rem) and only screen and (min-width: 48rem) {
+  #hero-1351 .cs-content {
+    width: 50%;
   }
 }
-/* Large Desktop Parallax Effect - 100px */
-@media only screen and (min-width: 100rem) {
-  #about .cs-background {
-    background: url("https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/restaurant-space.jpeg");
-    background-position: center;
+@media only screen and (min-width: 0rem) and only screen and (min-width: 81.25rem) {
+  #hero-1351 .cs-bubbles1 {
+    /* 200px - 450px */
+    margin-left: clamp(12.5rem, 20vw, 28.125rem);
+    top: 10.75rem;
+    right: auto;
+    left: 50%;
+  }
+}
+@media only screen and (min-width: 0rem) and only screen and (min-width: 100rem) {
+  #hero-1351 .cs-background {
+    background: url("https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/abstract.jpg");
     background-size: cover;
+    background-position: center;
     background-repeat: no-repeat;
-    /* creates the parallax effect */
     background-attachment: fixed;
   }
-  #about .cs-background img {
+  #hero-1351 .cs-background img {
     display: none;
   }
 }
-/*-- -------------------------- -->
-<---           About            -->
-<--- -------------------------- -*/
-/* Mobile - 360px */
-@media only screen and (min-width: 0rem) {
-  #hero-1969 {
-    padding: var(--sectionPadding);
-    overflow: hidden;
-    position: relative;
-    z-index: 1;
-  }
-  #hero-1969 .cs-container {
-    width: 100%;
-    max-width: 80rem;
-    margin: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: clamp(0.5rem, 1vw, 0.5rem);
-    position: relative;
-    z-index: 1;
-  }
-  #hero-1969 .cs-content {
-    text-align: left;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    position: relative;
-    z-index: 1;
-    flex: 1;
-  }
-  #hero-1969 .cs-title {
-    font-family: 'DIN Condensed VF';
-    font-size: clamp(2rem, 4.876vw, 3rem);
-    max-width: 32ch;
-    color: var(--primary);
-  }
-  #hero-1969 .cs-flex {
-    /* changes to 455px at large desktop */
-    max-width: 60rem;
-    flex: 1;
-  }
-  #hero-1969 .cs-text {
-    max-width: 100%;
-    color: var(--primary);
-  }
-  #hero-1969 .cs-background {
-    width: 100%;
-    height: 100%;
-    background-color: #ffffff;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
-    /* darkened overlay */
-  }
-  #hero-1969 .cs-background::before {
-    content: "";
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    z-index: 1;
-  }
-  #hero-1969 .cs-background img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    opacity: 0.2;
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-image: url('https://websthetic.tor1.cdn.digitaloceanspaces.com/rec44/Rec%2044%20Logo%20prim-02.png');
-    /* Your image URL */
-    background-repeat: repeat;
-    /* This ensures the background repeats */
-    background-size: 220px 220px;
-  }
-}
-/* Tablet - 768px */
-@media only screen and (min-width: 48rem) {
-  #hero-1969 .cs-wrapper {
-    padding: 5rem 1.75rem;
-    align-items: flex-end;
-  }
-  #hero-1969 .cs-form-wrapper {
-    max-width: 23.375rem;
-  }
-}
-/* Large Desktop - 1300px */
-@media only screen and (min-width: 81.25rem) {
-  #hero-1969 .cs-title {
-    margin: 0;
-  }
-  #hero-1969 .cs-container {
-    max-width: 100rem;
-  }
-  #hero-1969 .cs-content {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    gap: 1.875rem;
-  }
-  #hero-1969 .cs-flex {
-    width: 50%;
-    max-width: 46.875rem;
-  }
-  #hero-1969 .cs-wrapper {
-    padding: 5rem;
+@media only screen and (min-width: 0rem) and only screen and (min-width: 112.5rem) {
+  #hero-1351 .cs-bubbles2 {
+    margin-right: 50rem;
+    right: 50%;
+    left: auto;
+    top: 13.125rem;
+    bottom: auto;
   }
 }
 /*-- -------------------------- -->
@@ -287,6 +154,10 @@
   }
   #multisport .cs-title {
     max-width: 15ch;
+  }
+  #multisport .cs-text {
+    font-size: clamp(1.5rem, 3.9vw, 1.8rem);
+    font-style: italic;
   }
   #multisport .cs-flex {
     text-align: end;
@@ -614,3 +485,4 @@
     background-size: 220px 220px;
   }
 }
+/* PAGE-SPECIFIC STYLES FOR THE FACILITIES PAGE */

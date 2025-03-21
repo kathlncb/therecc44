@@ -125,6 +125,58 @@
     }
 }
 
+.cs-button-solid-2 {
+    z-index: 1;
+    position: relative;
+    display: inline-block;
+    background-color: var(--headerColor);
+    width: auto;
+    padding: 0 (60/16rem);
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: 'DIN Condensed VF';
+    font-size: clamp(1.2rem, 1.5vw, 1.5rem);;
+    line-height: (50/16em);
+    border-radius: 48px;
+    font-weight: 400;
+
+    // Transition Properties
+    color: var(--primary);
+    transition: color 0.3s;
+    border-radius: 48px;
+    transition-delay: 0.1s;
+    text-align: center;
+
+    &:hover {
+        color: var(--headerColor);
+        border-radius: 48px;
+        &:before {
+            width: 100%;
+        }
+    }
+
+    &:before {
+        z-index: -1;
+        position: absolute;
+        top: 0;
+        left: 0;
+        content: "";
+        opacity: 1;
+        display: block;
+        background-color: var(--primary);
+        border-radius: 48px;
+        height: 100%;
+
+        //Transition properties
+        width: 0;
+        transition: width 0.3s;
+    }
+}
+
+.cs-hide-on-mobile {
+    display: none;
+}
+
 /* Desktop - 1024px */
 @media only screen and (min-width: 64rem) {
     .cs-hide-on-mobile {
